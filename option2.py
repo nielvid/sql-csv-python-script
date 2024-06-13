@@ -1,7 +1,6 @@
 import pandas as pd
 from db.config import engine, db
 
-
 # SQL query to select data from the table
 
 tables = []
@@ -19,7 +18,7 @@ try:
         # Read data from the database into a pandas DataFrame
         df = pd.read_sql(query, connection)
         # Export the DataFrame to a CSV file
-        output_file = f"./logistics-db/{db}.{tables[i]}.csv"
+        output_file = f"./{db}.{tables[i]}.csv"
         df.to_csv(output_file, index=False)
         print(f"Data has been exported to {output_file}")
         i += 1
